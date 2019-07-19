@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/* 1. Configuration and helpers */
+@import "abstracts/variables", "abstracts/functions", "abstracts/mixins";
+
+/* 2. Vendors */
+@import "vendor/ant", "vendor/normalize";
+
+/* 3. Base stuff */
+@import "base/base", "base/fonts", "base/helpers";
+
+/* 4. Layout-related sections */
+@import "layout/header", "layout/footer";
+
+/* 5. Components */
+@import "components/aboutmodal";
+@import "components/challenge";
+@import "components/challengeideacell";
+@import "components/confirmemail";
+@import "components/createchallenge";
+@import "components/createidea";
+@import "components/header";
+@import "components/home";
+@import "components/ideaDetail";
+@import "components/loadimage";
+@import "components/login";
+@import "components/profile";
+@import "components/profilechallengecell";
+@import "components/profileideacell";
+@import "components/profilesummarylists";
+@import "components/resetpassword";
+@import "components/signup";
+@import "components/validate";
+
+/* 6. Themes */
+@import "themes/default";

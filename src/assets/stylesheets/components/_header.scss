@@ -1,0 +1,92 @@
+.ph-header {
+  background-color: $ph-primary-color;
+  height: 54px;
+  width: 100%;
+  padding: 0px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  position: fixed;
+  z-index: 2;
+
+  @include respond-to("xs") {
+    padding: 0px 11px;
+  }
+}
+
+.ph-header-logo {
+  background: {
+    image: url("../../assets/images/logo.png");
+    size: cover;
+    repeat: no-repeat;
+  }
+  height: 34px;
+  width: 160px;
+  cursor: pointer;
+}
+
+.ph-header-avatar {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  border: 1px solid $ph-white-color;
+  overflow: hidden;
+  background-color: $ph-primary-color;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.ph-header-content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.ph-header-divider {
+  background-color: $ph-white-color;
+  height: 37px;
+  width: 1px;
+  margin: 0px 22px;
+
+  @include respond-to("xs") {
+    margin: 0px 11px;
+  }
+}
+
+.ph-header-content {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ph-header-login {
+  display: flex;
+  align-items: center;
+  color: $ph-white-color;
+  font: {
+    family: Montserrat;
+    size: 16px;
+    weight: 300;
+  }
+  text-transform: capitalize;
+  margin-right: 5px;
+
+  @include respond-to("xs") {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 12ch;
+
+    &.authenticated {
+      display: none;
+    }
+  }
+}
+
+.ph-header-more-icon {
+  font-size: 25px;
+}

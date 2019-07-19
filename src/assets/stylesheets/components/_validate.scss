@@ -1,0 +1,151 @@
+.ph-validate {
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  @include respond-to("sm") {
+    height: 100%;
+  }
+}
+
+.ph-validate-content {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: auto;
+
+  @include respond-to("sm") {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.ph-validate-image-wrapper {
+  width: 50%;
+  position: relative;
+  background-color: $ph-primary-color;
+
+  @include respond-to("sm") {
+    position: absolute;
+    width: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  @include respond-to("xs") {
+    position: static;
+    display: none;
+  }
+}
+
+.ph-validate-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0.5;
+  background: {
+    image: url("../../assets/images/validate.svg");
+    size: cover;
+    position: center;
+  }
+}
+
+.ph-validate-data {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+  margin: {
+    top: 110px;
+    bottom: 22px;
+  }
+
+  @include respond-to("sm") {
+    background: $ph-white-color;
+    display: block;
+    width: auto;
+    z-index: 1;
+  }
+}
+
+.ph-validate-data-content {
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.ph-validate-title {
+  font: {
+    weight: bold;
+    size: 24px;
+  }
+  color: $ph-primary-color;
+  margin-bottom: 44px;
+}
+
+.ph-validate-message {
+  font: {
+    weight: normal;
+    size: 16px;
+  }
+
+  & .ph-validate-email {
+    font-weight: 600;
+    display: block;
+    padding: 22px 0px;
+
+    @include ellipsis();
+  }
+}
+
+.ph-validate-button {
+  margin: 55px auto 0px;
+  background-color: $ph-primary-color;
+  color: $ph-white-color;
+  height: 54px;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: {
+    weight: bold;
+    size: 18px;
+  }
+  cursor: pointer;
+
+  @include respond-to("xs") {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.ph-validate-resend-email {
+  margin-top: 33px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.ph-link {
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-width: 0;
+  outline: 0 none transparent;
+
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $ph-black-color;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

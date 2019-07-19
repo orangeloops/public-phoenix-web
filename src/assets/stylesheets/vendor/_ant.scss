@@ -1,0 +1,96 @@
+.ant-modal.ph-modal {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+
+  @include respond-to("xs") {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    top: 0px;
+  }
+
+  > .ant-modal-content {
+    height: 100%;
+    width: 100%;
+    max-width: 831px;
+    margin: 0px 97px 20px;
+    border-radius: 0px;
+
+    @include respond-to("sm") {
+      height: 490px;
+      margin: 0px 68px 20px;
+    }
+
+    @include respond-to("xs") {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+  }
+
+  .ant-modal-body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+  }
+}
+
+.ant-modal-close {
+  color: $ph-secondary-color !important;
+
+  .ant-modal-close-x {
+    font-size: 25px !important;
+  }
+}
+
+.ant-dropdown-menu-item {
+  &:hover {
+    background-color: $ph-third-color !important;
+  }
+}
+
+.ant-calendar-date {
+  &:hover {
+    background-color: $ph-third-color !important;
+  }
+}
+
+.ant-calendar-selected-day .ant-calendar-date {
+  background-color: $ph-third-color !important;
+}
+
+.ant-calendar-today {
+  > .ant-calendar-date {
+    border-color: $ph-primary-color !important;
+    color: $ph-primary-color !important;
+  }
+}
+
+.ant-calendar-today-btn {
+  color: $ph-primary-color !important;
+}
+
+//Checkbox
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: $ph-primary-color !important;
+  border-color: $ph-primary-color !important;
+}
+
+.ant-checkbox-checked:after {
+  border: 1px solid $ph-primary-color !important;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: $ph-primary-color !important;
+}
+
+.ant-checkbox-wrapper {
+  @include respond-to("xs") {
+    font-size: 12px !important;
+  }
+}

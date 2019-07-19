@@ -1,0 +1,42 @@
+.ph-load-image-wrapper {
+  width: 189px;
+  max-height: 189px;
+  object-fit: cover;
+  height: 100%;
+  padding: 0px;
+  background-color: $ph-primary-color-half-opacity;
+  @include respond-to("sm") {
+    width: 150px;
+  }
+  @include respond-to("xs") {
+    width: 100%;
+  }
+}
+
+.ph-load-image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 189px;
+  height: 100%;
+  @include respond-to("sm") {
+    width: 150px;
+  }
+  @include respond-to("xs") {
+    width: 100%;
+  }
+}
+
+.ph-load-image-camera-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.ph-load-image-camera {
+  width: 60px;
+  height: 60px;
+  margin: 11px;
+}

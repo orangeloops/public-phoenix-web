@@ -1,0 +1,228 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type Challenge {
+  closeDate: DateTime
+  createdBy: User!
+  createdDate: DateTime!
+  deletedBy: User
+  deletedDate: DateTime
+  description: String!
+  endDate: DateTime
+  id: ID!
+  ideas(createdById: String, createdByMe: Boolean = false, first: Int = 5, orderBy: ReactionOrder): IdeaConnection!
+  imageUrl: String
+  modifiedBy: User!
+  modifiedDate: DateTime!
+  myReaction: Reaction
+  privacyData: String
+  privacyMode: ChallengePrivacyMode!
+  reactions(createdById: String, createdByMe: Boolean = false, first: Int = 5, orderBy: ReactionOrder): ReactionConnection!
+  reactionsSummary(value: String): [ReactionsSummaryItem!]!
+  title: String!
+  topIdea(reactionValue: String): Idea
+}
+
+type ChallengeConnection {
+  edges: [ChallengeEdge!]!
+  pageInfo: ConnectionPageInfo!
+  totalCount: Int!
+}
+
+type ChallengeEdge {
+  cursor: String!
+  node: Challenge!
+}
+
+type CheckEmail {
+  isAvailable: Boolean
+  isBlacklisted: Boolean
+  isCorporate: Boolean
+}
+
+type ConnectionPageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+}
+
+type Idea {
+  challenge: Challenge
+  createdBy: User!
+  createdDate: DateTime!
+  deletedBy: User
+  deletedDate: DateTime
+  description: String
+  id: ID!
+  imageUrl: String
+  modifiedBy: User!
+  modifiedDate: DateTime!
+  myReaction: Reaction
+  reactions(createdById: String, createdByMe: Boolean = false, first: Int = 5, orderBy: ReactionOrder): ReactionConnection!
+  reactionsSummary(value: String): [ReactionsSummaryItem!]!
+  title: String!
+}
+
+type IdeaConnection {
+  edges: [IdeaEdge!]!
+  pageInfo: ConnectionPageInfo!
+  totalCount: Int!
+}
+
+type IdeaEdge {
+  cursor: String!
+  node: Idea!
+}
+
+type Mutation {
+  _: Boolean
+  checkEmail(email: String!): CheckEmail
+  confirmEmail(token: String!): Void
+  createChallenge(closeDate: DateTime, description: String, endDate: DateTime, privacyMode: ChallengePrivacyMode, title: String!, upload: Upload): Challenge
+  createIdea(challengeId: String!, description: String, title: String!, upload: Upload): Idea
+  createReaction(objectId: ID!, objectType: ReactionObjectType!, value: String!): Reaction
+  deleteChallenge(id: ID!): Boolean!
+  deleteIdea(id: ID!): Boolean!
+  deleteReaction(id: ID!, objectType: ReactionObjectType!): Boolean!
+  deleteUser(id: ID!): Boolean!
+  refreshTokens(token: String!): Tokens
+  requestResetPassword(email: String!): Void
+  resendEmailConfirmation(email: String!): Void
+  resetPassword(password: String!, token: String!): Void
+  signIn(email: String!, generateRefreshToken: Boolean = false, password: String!): Tokens
+  signUp(email: String!, name: String!, password: String!, upload: Upload): Void
+  updateChallenge(closeDate: DateTime, description: String, endDate: DateTime, id: ID!, privacyMode: ChallengePrivacyMode, title: String!, upload: Upload): Challenge
+  updateIdea(description: String, id: ID!, title: String!, upload: Upload): Idea
+  updateUser(id: ID!, name: String, upload: Upload): User
+}
+
+type Query {
+  _: Boolean
+  challenge(id: ID!): Challenge
+  challenges(after: String, createdById: String, createdByMe: Boolean = false, excludeClosed: Boolean = true, excludeEnded: Boolean = true, first: Int, orderBy: ChallengeOrder, withReactionByUserId: String): ChallengeConnection!
+  idea(id: ID!): Idea
+  ideas(after: String, challengeId: String, createdById: String, createdByMe: Boolean = false, first: Int, orderBy: IdeaOrder, withReactionByUserId: String): IdeaConnection!
+  me: User
+  reaction(id: ID!, objectType: ReactionObjectType!): Reaction
+  reactions(after: String, createdById: String, createdByMe: Boolean = false, first: Int, objectId: String, objectType: ReactionObjectType!, orderBy: ReactionOrder, value: String): ReactionConnection!
+  reactionsSummary(objectId: String!, objectType: ReactionObjectType!, value: String): [ReactionsSummaryItem!]!
+  reset: String
+  user(id: ID!): User
+  version: String
+}
+
+type Reaction {
+  createdBy: User!
+  createdDate: DateTime!
+  deletedBy: User
+  deletedDate: DateTime
+  id: ID!
+  modifiedBy: User!
+  modifiedDate: DateTime!
+  objectId: ID!
+  value: String!
+}
+
+type ReactionConnection {
+  edges: [ReactionEdge!]!
+  pageInfo: ConnectionPageInfo!
+  totalCount: Int!
+}
+
+type ReactionEdge {
+  cursor: String!
+  node: Reaction!
+}
+
+type ReactionsSummaryItem {
+  totalCount: Int!
+  value: String!
+}
+
+type Subscription {
+  _: Boolean
+}
+
+type Tokens {
+  refreshToken: String
+  token: String!
+}
+
+type User {
+  challenges(after: String, first: Int, orderBy: ChallengeOrder): ChallengeConnection!
+  createdDate: DateTime!
+  deletedDate: DateTime
+  email: String!
+  id: ID!
+  ideas(after: String, first: Int, orderBy: IdeaOrder): IdeaConnection!
+  imageUrl: String
+  modifiedDate: DateTime!
+  name: String!
+  status: UserStatus!
+}
+
+type Void {
+  _: Boolean
+}
+
+enum ChallengeOrderField {
+  CREATED_DATE
+  TITLE
+  UPDATED_DATE
+}
+
+enum ChallengePrivacyMode {
+  BYDOMAIN
+  PUBLIC
+}
+
+enum ConnectionOrderDirection {
+  ASC
+  DESC
+}
+
+enum IdeaOrderField {
+  CREATED_DATE
+  TITLE
+  UPDATED_DATE
+}
+
+enum ReactionObjectType {
+  CHALLENGE
+  IDEA
+}
+
+enum ReactionOrderField {
+  CREATED_DATE
+  UPDATED_DATE
+}
+
+enum UserStatus {
+  ACTIVE
+  BLOCKED
+  PENDING
+}
+
+input ChallengeOrder {
+  direction: ConnectionOrderDirection!
+  field: ChallengeOrderField!
+}
+
+input IdeaOrder {
+  direction: ConnectionOrderDirection!
+  field: IdeaOrderField!
+}
+
+input ReactionOrder {
+  direction: ConnectionOrderDirection!
+  field: ReactionOrderField!
+}
+
+"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar DateTime
+
+scalar Upload

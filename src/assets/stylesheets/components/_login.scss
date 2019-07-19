@@ -1,0 +1,209 @@
+.ph-login {
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  @include respond-to("sm") {
+    height: 100%;
+  }
+}
+
+.ph-login-content {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: auto;
+
+  @include respond-to("sm") {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.ph-login-image-wrapper {
+  width: 50%;
+  position: relative;
+  background-color: $ph-primary-color;
+
+  @include respond-to("sm") {
+    position: absolute;
+    width: auto;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+  }
+
+  @include respond-to("xs") {
+    position: static;
+    display: none;
+  }
+}
+
+.ph-login-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0.5;
+  background: {
+    image: url("../../assets/images/login.svg");
+    size: cover;
+    position: center;
+  }
+}
+
+.ph-login-data {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+  margin: {
+    top: 110px;
+    bottom: 22px;
+  }
+
+  @include respond-to("sm") {
+    background: $ph-white-color;
+    display: block;
+    width: auto;
+    z-index: 1;
+  }
+
+  @include respond-to("xs") {
+    margin-top: 55px;
+  }
+}
+
+.ph-login-data-content {
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+
+  @include respond-to("sm") {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+.ph-login-divider {
+  display: none;
+
+  width: 100%;
+  //display: flex;
+  align-items: center;
+  margin: {
+    top: 44px;
+    bottom: 33px;
+  }
+
+  & span {
+    margin: 0 10px;
+    color: $ph-cloudy-gray-color;
+    font-weight: 300;
+  }
+
+  @include respond-to("xs") {
+    margin: {
+      top: 22px;
+      bottom: 11px;
+    }
+  }
+}
+
+.ph-login-divider-line {
+  height: 2px;
+  background-color: $ph-auxiliary-color;
+  width: 100%;
+}
+
+.ph-login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ph-login-input {
+  height: 44px;
+  width: 100%;
+  padding: 11px 0px 0px 11px;
+  font-weight: 300;
+  font-size: 16px;
+  border: 0px;
+  border-bottom: 1px solid $ph-primary-color;
+  box-sizing: border-box;
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 22px;
+  }
+}
+
+input::placeholder {
+  color: $ph-cloudy-gray-color;
+}
+
+input:focus {
+  outline: none;
+}
+
+.ph-login-button {
+  margin-top: 33px;
+  background-color: $ph-primary-color;
+  color: $ph-white-color;
+  outline: 0 none transparent;
+  width: 100%;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: {
+    weight: bold;
+    size: 18px;
+  }
+  cursor: pointer;
+
+  @include respond-to("xs") {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  &:hover {
+    background: $ph-primary-color-lighter;
+  }
+
+  &:active {
+    background-color: $ph-primary-color-darker;
+  }
+
+  &:disabled {
+    background-color: $ph-primary-color-half-opacity;
+    cursor: not-allowed;
+  }
+}
+
+.ph-login-forgot-password {
+  margin-top: 33px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.ph-login-no-account {
+  margin-top: 33px;
+  text-align: center;
+  font-size: 16px;
+  color: $ph-black-color;
+  font-weight: 300;
+}
+
+.ph-login-no-account span {
+  margin-right: 13px;
+}
+
+.ph-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: $ph-black-color;
+}

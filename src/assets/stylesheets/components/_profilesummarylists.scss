@@ -1,0 +1,15 @@
+.ph-summary-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 110px;
+  grid-gap: 22px 75px;
+
+  @include respond-to("md") {
+    grid-gap: 22px 33px;
+  }
+
+  @include respond-to("xs") {
+    grid-template-columns: 1fr;
+  }
+}
