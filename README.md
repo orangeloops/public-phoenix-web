@@ -1,4 +1,4 @@
-# IdeaSource Project
+# IdeaSource Web Project
 
 ## What's IdeaSource?
 
@@ -37,7 +37,6 @@ For deployment, run `npm run build` and upload `build/` to your server.
 >You can check out the full license [here](https://github.com/orangeloops/public-phoenix-web/blob/develop/LICENSE)
 
 This project is licensed under the terms of the MIT license.
-
 
 ---
 
