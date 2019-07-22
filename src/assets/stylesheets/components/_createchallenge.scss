@@ -1,0 +1,246 @@
+.ph-create-challenge-container {
+  height: 100%;
+  width: 100%;
+  background-color: $ph-auxiliary-color;
+  padding: {
+    top: 33px;
+    right: 77px;
+    bottom: 44px;
+    left: 77px;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @include respond-to("sm") {
+    padding: 33px 46px 25px 46px;
+  }
+  @include respond-to("xs") {
+    padding: 44px 22px;
+  }
+}
+
+.ph-create-challenge-header {
+  font: {
+    weight: 600;
+    size: 22px;
+  }
+  text-transform: uppercase;
+  margin-bottom: 33px;
+
+  @include respond-to("xs") {
+    grid-template-rows: 160px 44px 100px;
+    grid-template-columns: 1fr;
+    margin-bottom: 22px;
+  }
+}
+
+.ph-create-challenge-box {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "title title title title" "image description description  description";
+  grid-gap: 22px;
+  grid-template-rows: 1fr 3fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  margin-bottom: 22px;
+
+  @include respond-to("xs") {
+    grid-gap: 11px;
+    grid-template-rows: 160px 44px 100px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "title" "description";
+    margin-bottom: 0;
+  }
+}
+
+.ph-create-challenge-input {
+  padding: 11px;
+  font-size: 14px;
+  border: 0px;
+  border-bottom: 1px solid $ph-primary-color;
+  input::placeholder {
+    color: $ph-cloudy-gray-color;
+  }
+
+  @include respond-to("xs") {
+    font-size: 12px;
+  }
+
+  &.title {
+    grid-area: title;
+  }
+
+  &.description {
+    grid-area: description;
+    outline: 0 none transparent;
+    resize: none;
+    @include respond-to("xs") {
+      margin-bottom: 11px;
+    }
+  }
+}
+
+.ph-create-challenge-image {
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+}
+
+.ph-create-challenge-description {
+  grid-area: description;
+  resize: none;
+  padding: 11px;
+  border: 0px;
+  border-bottom: 1px solid $ph-primary-color;
+}
+
+.ph-create-challenge-deadline-box {
+  display: grid;
+  width: 100%;
+  grid-gap: 11px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "idea challenge";
+}
+
+.ph-create-challenge-deadline-title {
+  font-size: 14px;
+  @include respond-to("md") {
+    font-size: 10px;
+  }
+}
+
+.ph-create-challenge-date-picker {
+  height: 100%;
+  border-bottom: 1px solid $ph-primary-color;
+
+  input::placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    @include respond-to("sm") {
+      font-size: 11px;
+    }
+    @include respond-to("xs") {
+      color: $ph-white-color;
+    }
+  }
+
+  &.deadline {
+    grid-area: challenge;
+  }
+
+  &.receipt-deadline {
+    grid-area: idea;
+  }
+
+  .ant-calendar-picker-input {
+    font-size: 14px;
+    border-radius: 0;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+.ph-date-picker-hint {
+  padding-left: 11px;
+  background-color: $ph-primary-color-half-opacity;
+  font-weight: 600;
+  color: $ph-white-color;
+  text-shadow: 1px 1px #000000;
+}
+
+.ph-create-challenge-button {
+  margin-top: 33px;
+  background-color: $ph-primary-color;
+  outline: 0 none transparent;
+  color: $ph-white-color;
+  width: 300px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font: {
+    weight: bold;
+    size: 18px;
+  }
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include respond-to("xs") {
+    margin-top: 11px;
+    width: 100%;
+  }
+
+  &:hover {
+    background: $ph-primary-color-lighter;
+  }
+
+  &:active {
+    background-color: $ph-primary-color-darker;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $ph-primary-color-half-opacity;
+    cursor: not-allowed;
+  }
+}
+
+.ph-load-image-wrapper {
+  width: 189px;
+  max-height: 189px;
+  object-fit: cover;
+  height: 100%;
+  padding: 0px;
+  @include respond-to("sm") {
+    width: 150px;
+  }
+  @include respond-to("xs") {
+    width: 100%;
+  }
+}
+
+.ph-load-image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 189px;
+  height: 100%;
+  cursor: pointer;
+
+  @include respond-to("sm") {
+    width: 150px;
+  }
+  @include respond-to("xs") {
+    width: 100%;
+  }
+}
+
+.ph-load-image-camera-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: $ph-primary-color-half-opacity;
+}
+
+.ph-load-image-camera {
+  width: 60px;
+  height: 60px;
+  margin: 11px;
+}
+
+.ph-create-challenge-checkbox-container {
+  padding-top: 11px;
+  width: 100%;
+}

@@ -1,0 +1,138 @@
+.ph-profile-challenge-cell-wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 0px 11px;
+}
+
+.ph-profile-challenge-cell-image-wrapper {
+  width: auto;
+  min-width: 130px;
+  cursor: pointer;
+  height: 110px !important;
+}
+
+.ph-profile-challenge-cell-image-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #edebf0;
+}
+
+.ph-profile-challenge-cell-data-wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-auto-rows: 1fr 3fr;
+  grid-gap: 5px 2px;
+  grid-template-areas: "title edit" "description-box description-box";
+
+  @include respond-to("xs") {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.ph-profile-challenge-cell-data-title {
+  grid-area: title;
+  cursor: pointer;
+  font: {
+    family: Montserrat;
+    weight: 600;
+    size: 12px;
+  }
+  color: $ph-black-color;
+
+  @include ellipsis;
+}
+
+.ph-profile-challenge-cell-dropdown-text {
+  padding: 0 5px;
+}
+
+.ph-profile-challenge-cell-data-icon {
+  grid-area: edit;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @include respond-to("xs") {
+    padding-left: 10px;
+  }
+}
+
+.ph-profile-challenge-cell-data-idea-wrapper {
+  grid-area: description-box;
+  background-color: $ph-third-color;
+  margin: 5px 0px 0px;
+  padding: 5px 11px;
+  color: $ph-black-color;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-auto-rows: 1fr 2fr;
+  grid-gap: 0px 2px;
+  grid-template-areas: "title votes" "description votes";
+  cursor: pointer;
+
+  @include respond-to("xs") {
+    padding: 11px 5px;
+    grid-gap: 0px 5px;
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.ph-profile-challenge-cell-data-idea-title {
+  grid-area: title;
+
+  font: {
+    family: Montserrat;
+    weight: 300;
+    size: 11px;
+  }
+
+  @include ellipsis;
+}
+
+.ph-profile-challenge-cell-data-idea-description {
+  grid-area: description;
+
+  font: {
+    family: Montserrat;
+    weight: normal;
+    size: 12px;
+  }
+  color: $ph-primary-color;
+
+  @include ellipsisMultiline(2);
+}
+
+.ph-profile-challenge-cell-data-idea-votes {
+  grid-area: votes;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  line-height: 1;
+
+  font: {
+    family: Montserrat;
+    weight: bold;
+    size: 12px;
+  }
+}
+
+.ph-profile-challenge-cell-data-idea-votes-counter {
+  font: {
+    family: Montserrat;
+    weight: bold;
+    size: 18px;
+  }
+  color: $ph-secondary-color;
+}

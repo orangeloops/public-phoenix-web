@@ -1,0 +1,15 @@
+{
+  "name": "IdeaSource v1 Schema",
+  "schemaPath": ".graphql/ideasource.schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "production": {
+        "url": "https://ideasource.io/graphql",
+        "introspect": true
+      },
+      "localhost": {
+        "url": "http://localhost:5000/graphql"
+      }
+    }
+  }
+}

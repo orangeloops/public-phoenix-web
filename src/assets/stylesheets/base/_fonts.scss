@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+@font-face {
+  font-family: Montserrat;
+  src: url("./fonts/Montserrat-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("./fonts/Montserrat-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("./fonts/Montserrat-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("./fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}

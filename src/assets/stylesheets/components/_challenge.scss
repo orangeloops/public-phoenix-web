@@ -1,0 +1,301 @@
+.ph-challenge {
+  width: 100%;
+  height: 100%;
+  color: $ph-black-color;
+}
+
+.ph-challenge-image-box {
+  margin-top: 54px;
+  width: 100%;
+  height: 500px;
+  position: fixed;
+  z-index: 0;
+  background-color: #edebf0;
+
+  @include respond-to("xs") {
+    height: 300px;
+  }
+}
+
+.ph-challenge-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ph-challenge-wrapper {
+  position: absolute;
+  top: 500px;
+  right: 0;
+  left: 0;
+  background: #fff;
+  z-index: 1;
+
+  @include respond-to("xs") {
+    top: 300px;
+  }
+}
+
+.ph-challenge-summary {
+  width: 100%;
+  height: 99px;
+  background-color: $ph-auxiliary-color;
+  padding: 0 33px;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond-to("xs") {
+    padding: 0 11px;
+  }
+}
+
+.ph-challenge-summary-creation {
+  width: 100%;
+  height: 100%;
+  margin-right: 11px;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+
+  @include respond-to("xs") {
+    width: 60%;
+  }
+
+  @include respond-to("xs") {
+    width: auto;
+  }
+}
+
+.ph-challenge-summary-creation-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid $ph-primary-color;
+  background-color: $ph-primary-color;
+  object-fit: cover;
+
+  cursor: pointer;
+
+  @include respond-to("xs") {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.ph-challenge-summary-creation-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $ph-black-color;
+  margin-left: 11px;
+
+  > :not(:last-child) {
+    margin-bottom: 1px;
+  }
+
+  @include respond-to("xs") {
+    display: none;
+  }
+}
+
+.ph-challenge-summary-creation-data-name {
+  font: {
+    family: Montserrat;
+    weight: 600;
+    size: 24px;
+  }
+  @include ellipsisMultiline(1);
+}
+
+.ph-challenge-summary-creation-data-date {
+  font: {
+    family: Montserrat;
+    weight: 300;
+    size: 18px;
+  }
+
+  @include respond-to("xs") {
+    font: {
+      size: 12px;
+    }
+  }
+}
+
+.ph-challenge-summary-deadlines {
+  width: 100%;
+  margin: 22px 0px;
+  display: flex;
+  justify-content: flex-end;
+
+  @include respond-to("sm") {
+    width: 100%;
+  }
+}
+
+.ph-challenge-summary-deadlines-content {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &.ideas {
+    padding-right: 33px;
+    text-align: right;
+  }
+
+  &.challenge {
+    padding-left: 33px;
+    text-align: left;
+  }
+
+  @include respond-to("sm") {
+    justify-content: space-around;
+
+    &.ideas {
+      padding-right: 11px;
+    }
+
+    &.challenge {
+      padding-left: 11px;
+    }
+  }
+}
+
+.ph-challenge-summary-deadlines-date {
+  color: $ph-secondary-color;
+  font: {
+    family: Montserrat;
+    weight: bold;
+    size: 22px;
+  }
+
+  @include respond-to("xs") {
+    font: {
+      size: 15px;
+    }
+  }
+}
+
+.ph-challenge-summary-deadlines-label {
+  font: {
+    family: Montserrat;
+    weight: bold;
+    size: 14px;
+  }
+  width: auto;
+
+  @include respond-to("xs") {
+    font: {
+      size: 12px;
+    }
+    @include ellipsisMultiline(1);
+    word-break: break-all !important;
+    width: 100%;
+  }
+}
+
+.ph-challenge-summary-deadlines-separator {
+  flex: 0 0 1px;
+  height: 100%;
+  background-color: $ph-light-gray-color;
+}
+
+.ph-challenge-info-box {
+  width: 100%;
+  height: auto;
+  padding: 33px;
+
+  @include respond-to("xs") {
+    padding: 22px 11px 33px;
+  }
+}
+
+.ph-challenge-title {
+  font: {
+    size: 26px;
+    weight: 700;
+  }
+  margin-right: 20px;
+
+  @include respond-to("xs") {
+    font-size: 18px;
+  }
+}
+
+.ph-challenge-description-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.ph-challenge-description {
+  height: auto;
+  text-align: justify;
+  font: {
+    size: 18px;
+    weight: normal;
+  }
+
+  @include respond-to("xs") {
+    text-align: start;
+    font-size: 14px;
+  }
+}
+
+.ph-challenge-add-idea-button {
+  background: $ph-primary-color;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: $ph-white-color;
+  padding: 11px 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 40px;
+  align-self: flex-end;
+  margin-top: 11px;
+
+  &:hover {
+    background-color: $ph-primary-color-lighter;
+  }
+
+  &:active {
+    background-color: $ph-primary-color-darker;
+  }
+
+  @include respond-to("xs") {
+    padding: 11px;
+    width: 100%;
+  }
+}
+
+.ph-challenge-ideas-wrapper {
+  width: 100%;
+  margin: 0px 0px 44px;
+  padding: 33px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: min-content;
+  grid-gap: 22px 0px;
+
+  @include respond-to("md") {
+    padding: 0px 22px;
+  }
+
+  @include respond-to("xs") {
+    padding: 0px 11px;
+  }
+}
+
+.ph-challenge-private-label {
+  padding: 5px 33px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.ph-challenge-private-image {
+  width: 10px;
+  height: 15px;
+  margin-left: 5px;
+}

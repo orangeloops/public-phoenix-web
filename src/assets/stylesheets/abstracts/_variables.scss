@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Colors
+$ph-primary-color: #604f8b !default;
+$ph-primary-color-darker: darken($ph-primary-color, 7);
+$ph-primary-color-lighter: lighten($ph-primary-color, 7);
+$ph-primary-color-half-opacity: rgba(96, 79, 140, 0.5) !default;
+$ph-secondary-color: #ba9ce8 !default;
+$ph-third-color: #efeafc !default;
+$ph-black-color: #454545 !default;
+$ph-white-color: #ffffff !default;
+$ph-cloudy-gray-color: #7e7b7b !default;
+$ph-light-gray-color: #aeaeae !default;
+$ph-auxiliary-color: #edebf0 !default;
+
+/// Breakpoints
+$breakpoints: (
+  "xs": (
+    max-width: 575px,
+  ),
+  "sm": (
+    max-width: 768px,
+  ),
+  "md": (
+    max-width: 992px,
+  ),
+  "lg": (
+    max-width: 1200px,
+  ),
+  "xl": (
+    max-width: 1600px,
+  ),
+  "xxl": (
+    min-width: 1601px,
+  ),
+) !default;

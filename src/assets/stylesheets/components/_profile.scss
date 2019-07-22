@@ -1,0 +1,377 @@
+.ph-profile {
+  color: $ph-black-color;
+}
+
+.ph-profile-header-space {
+  height: 54px;
+}
+
+.ph-profile-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  font: {
+    family: Montserrat;
+    weight: 600;
+    size: 24px;
+  }
+  margin-top: 40px;
+
+  @include respond-to("xs") {
+    display: none;
+  }
+}
+
+.ph-profile-user-info {
+  width: 80%;
+  height: 100%;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-rows: 200px;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: "picture user";
+  grid-gap: 0px 45px;
+  justify-content: center;
+  align-items: center;
+
+  @include respond-to("md") {
+    padding: 0px 22px;
+    grid-template-rows: 150px;
+    grid-template-columns: 150px 1fr;
+  }
+
+  @include respond-to("sm") {
+    grid-template-columns: 150px 1fr;
+    grid-gap: 0px 22px;
+  }
+
+  @include respond-to("xs") {
+    height: auto;
+    margin: 33px auto 0;
+    padding: 0;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "picture" "user";
+    grid-gap: 11px;
+  }
+}
+
+.ph-profile-user-info-picture {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  grid-area: picture;
+  position: relative;
+
+  @include respond-to("xs") {
+    height: 121px;
+    width: 121px;
+    margin: 0 auto;
+  }
+}
+
+.ph-profile-name-editable {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  @include respond-to("xs") {
+    justify-content: center;
+  }
+}
+
+.ph-profile-edit-icon {
+  width: 14px;
+  height: 14px;
+  margin-left: 14px;
+  cursor: pointer;
+  background: {
+    image: url("../../assets/images/edit.png");
+    size: cover;
+    position: center;
+  }
+  grid-area: picture;
+}
+
+.ph-load-icon {
+  font-size: 48px;
+  color: white;
+}
+
+.ph-profile-user-image {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  background-color: $ph-primary-color;
+  cursor: pointer;
+}
+
+.ph-profile-image-camera-box {
+  width: 47px;
+  height: 47px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: {
+    color: $ph-white-color;
+    style: solid;
+    width: 2px;
+  }
+  position: absolute;
+  bottom: 0px;
+  right: 11px;
+  background-color: $ph-secondary-color;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-to("md") {
+    bottom: 0px;
+    right: 0px;
+  }
+
+  @include respond-to("xs") {
+    width: 35px;
+    height: 35px;
+    bottom: -5px;
+    right: 0px;
+  }
+}
+
+.ph-profile-image-camera {
+  width: 60%;
+  height: 60%;
+}
+
+.ph-profile-button {
+  margin: 0px;
+  background-color: $ph-primary-color;
+  color: $ph-white-color;
+  height: 44px;
+  width: 301px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover {
+    background: $ph-primary-color-lighter;
+  }
+
+  &:active {
+    background-color: $ph-primary-color-darker;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include respond-to("md") {
+    width: 200px;
+  }
+
+  @include respond-to("sm") {
+    width: 300px;
+  }
+
+  @include respond-to("xs") {
+    width: 280px;
+    margin: 0;
+  }
+}
+
+.ph-profile-user-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond-to("sm") {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: flex-end;
+  }
+
+  @include respond-to("sm") {
+    height: auto;
+  }
+
+  @include respond-to("xs") {
+    align-items: center;
+  }
+}
+
+.ph-profile-user-info-data {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: user;
+
+  @include respond-to("xs") {
+    min-width: 160px;
+    text-align: center;
+  }
+}
+
+.ph-profile-user-info-data-name {
+  max-width: 22ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: {
+    family: Montserrat;
+    weight: bold;
+    size: 18px;
+  }
+
+  @include ellipsis();
+}
+
+.ph-profile-input {
+  height: 44px;
+  width: 280px;
+  padding: 11px 0px 0px 11px;
+  font-weight: 300;
+  font-size: 16px;
+  border: 0px;
+  border-bottom: 1px solid $ph-primary-color;
+  box-sizing: border-box;
+  display: block;
+
+  @include respond-to("sm") {
+    width: 300px;
+  }
+
+  @include respond-to("xs") {
+    width: 280px;
+  }
+}
+
+.ph-profile-user-info-data-text {
+  font: {
+    family: Montserrat;
+    weight: 300;
+    size: 14px;
+  }
+  padding-top: 7px;
+
+  &.city {
+    padding-top: 7px;
+  }
+
+  @include ellipsis();
+
+  @include respond-to("xs") {
+    height: inherit;
+  }
+}
+
+.ph-profile-user-info-button {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  margin-left: 45px;
+  font: {
+    family: Montserrat;
+    weight: 300;
+    size: 14px;
+  }
+
+  @include respond-to("sm") {
+    padding: 11px 0;
+    margin-left: 0;
+  }
+
+  @include respond-to("xs") {
+    padding: 11px 0;
+  }
+}
+
+.ph-profile-user-summary-wrapper {
+  width: 100%;
+  height: 111px;
+  background-color: $ph-auxiliary-color;
+  margin: 22px 0px 44px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  @include respond-to("xs") {
+    margin-bottom: 22px;
+    padding: 0 11px;
+  }
+}
+
+.ph-profile-user-summary {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ph-profile-user-summary-content {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $ph-black-color;
+  font: {
+    family: Montserrat;
+    weight: 300;
+    size: 16px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  &.clicked {
+    font-weight: bold;
+  }
+
+  @include respond-to("xs") {
+    font-size: 14px;
+  }
+}
+
+.ph-profile-user-summary-counter {
+  color: $ph-secondary-color;
+  font-size: 35px;
+
+  @include respond-to("xs") {
+    font-size: 30px;
+  }
+}
+
+.ph-profile-user-summary-label {
+}
+
+.ph-profile-user-summary-list-wrapper {
+  padding: 0px 111px 22px;
+
+  @include respond-to("md") {
+    padding: 0px 22px 22px;
+  }
+
+  @include respond-to("xs") {
+    padding: 0px 11px 11px;
+  }
+}
+
+.ph-profile-user-summary-list-content {
+  width: 100%;
+}

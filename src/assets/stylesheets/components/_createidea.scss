@@ -1,0 +1,115 @@
+.ph-create-idea-content-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: $ph-auxiliary-color;
+  padding: {
+    top: 33px;
+    right: 77px;
+    bottom: 44px;
+    left: 77px;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @include respond-to("sm") {
+    padding: 33px 22px;
+  }
+}
+
+.ph-create-idea-header {
+  font: {
+    weight: 600;
+    size: 22px;
+  }
+  text-transform: uppercase;
+  margin-bottom: 33px;
+
+  @include respond-to("xs") {
+    margin-bottom: 0;
+  }
+}
+
+.ph-create-idea-input {
+  padding: 11px;
+  font-size: 14px;
+  border: 0px;
+  border-bottom: 1px solid $ph-primary-color;
+  input::placeholder {
+    color: $ph-cloudy-gray-color;
+  }
+
+  @include respond-to("xs") {
+    font-size: 12px;
+  }
+
+  &.title {
+    grid-area: title;
+  }
+
+  &.description {
+    grid-area: description;
+    outline: 0 none transparent;
+    resize: none;
+  }
+}
+
+.ph-create-idea-box {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "title title title title" "image description description description";
+  grid-gap: 22px;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+
+  @include respond-to("xs") {
+    grid-template-areas: "title" "image" "description";
+    grid-template-columns: 1fr;
+    grid-gap: 11px;
+  }
+}
+
+.ph-create-idea-button {
+  margin-top: 33px;
+  background-color: $ph-primary-color;
+  color: $ph-white-color;
+  width: 300px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: {
+    weight: bold;
+    size: 18px;
+  }
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background: $ph-primary-color-lighter;
+  }
+
+  &:active {
+    background-color: $ph-primary-color-darker;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $ph-primary-color-half-opacity;
+    cursor: not-allowed;
+  }
+
+  @include respond-to("xs") {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+.ph-create-idea-image {
+  grid-area: image;
+}
